@@ -1,6 +1,6 @@
 ---
 title: "Automated Image Captioning (Bachelor Thesis)"
-description: "Can computers summarize the contents of an image?"
+description: "Sentiment Analysis on News Articles"
 dateString: Jan 2021 - May 2021
 draft: false
 tags: ["Python", "PyTorch", "CNN", "LSTM", "CRNN", "DL", "AI"]
@@ -16,4 +16,4 @@ cover:
 
 In this project, I used NewsAPI, streamlit, and NLTK to [create an app for sentiment analysis](https://rjunccnewsapp.streamlit.app/) and a noun counter for fun. Then, generated an average news sentiment.
 
-![Attention Mechanism](/projects/news_articles/Screenshot_1.png)
+<!-- ![Attention Mechanism](/projects/news_articles/Screenshot_1.png) -->
