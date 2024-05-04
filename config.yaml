@@ -50,7 +50,7 @@ params:
     enabled: true
     title: "Ryan Jacobs"
     subtitle: 👋 Welcome to my profile! I'm a passionate and analytical programmer with a love for math. Currently pursuing a major in Data Science and Mathematics at the University of North Carolina at Charlotte, where I'm honing my skills and knowledge to excel in the world of data. My academic journey fuels my dream of becoming a traveling Data Scientist or Machine Learning Scientist. I thrive on solving complex problems and leveraging data-driven insights to make informed decisions. From coding to crunching numbers, I'm always eager to explore innovative solutions and stay ahead in this evolving field. Let's connect and discuss how we can collaborate to make data-driven impacts worldwide! 🌍
-    imageUrl: "home/casual-small-square.jpeg"
+    imageUrl: "home/1662075901695.jpg"
     imageWidth: 220
     imageHeight: 220
     # buttons:
