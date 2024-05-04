@@ -17,10 +17,10 @@ menu:
       name: Projects
       url: /projects
       weight: 30
-    - identifier: experience
-      name: Experience
-      url: /experience
-      weight: 40
+    # - identifier: experience
+    #   name: Experience
+    #   url: /experience
+    #   weight: 40
     - identifier: search
       name: Search
       url: /search
