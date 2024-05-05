@@ -12,4 +12,4 @@ weight: 301
 
 -
 
-![](/certifications/great_learning/RYAN JACOBS - certificate.pdf)
+![](/certifications/great_learning/RYAN JACOBS - certificate.jpg)
