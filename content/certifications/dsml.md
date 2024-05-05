@@ -10,6 +10,4 @@ weight: 301
 
 <!-- ### Description -->
 
--
-
 ![](/certifications/great_learning/dsmlcertificate.png)
