@@ -1,6 +1,6 @@
 ---
-title: "Automated Image Captioning (Bachelor Thesis)"
-description: "Sentiment Analysis on News Articles"
+title: "Sentiment Analysis on News Articles"
+description: "Using Streamlit, NewsAPI, and NLTK"
 dateString: Jan 2021 - May 2021
 draft: false
 tags: ["Python", "PyTorch", "CNN", "LSTM", "CRNN", "DL", "AI"]
