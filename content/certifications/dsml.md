@@ -8,8 +8,8 @@ showToc: false
 weight: 301
 ---
 
-### Description
+<!-- ### Description -->
 
 -
 
-![](/certifications/great_learning/RYAN JACOBS - certificate.jpg)
+![](/certifications/great_learning/dsmlcertificate.png)
