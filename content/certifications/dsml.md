@@ -1,5 +1,5 @@
 ---
-title: "Great Learning x MIT: Data Science & Machine Learning: Making Data-Driven Decisions"
+title: "Great Learning x MIT - Data Science & Machine Learning: Making Data-Driven Decisions"
 description:
 dateString: April 2024
 draft: false
