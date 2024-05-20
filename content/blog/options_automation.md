@@ -6,5 +6,5 @@ draft: false
 tags: ["ML", "Trading", "Options"]
 weight: 107
 cover:
-  image: "/blog/pca-visualized/cover.jpg"
+  image: "/blog/options_automation/cover.jpg"
 ---
