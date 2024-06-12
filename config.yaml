@@ -74,6 +74,8 @@ params:
       url: "https://github.com/RJUNCC"
     - name: "youtube"
       url: "https://www.youtube.com/channel/UCo_LnYpsLfu0t0f-FTzZaAQ"
+    - name: "calendly"
+      url: "https://calendly.com/ryan-jacobs04/30min"
 
   # text search
   fuseOpts:
