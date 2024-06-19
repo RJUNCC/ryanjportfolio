@@ -16,7 +16,7 @@ tags:
   ]
 showToc: false
 weight: 203
-height: 300
+height: 500
 cover:
   image: "/projects/options/options.png"
 ---
