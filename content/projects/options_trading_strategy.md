@@ -15,7 +15,7 @@ tags:
     "Decision Tree",
   ]
 showToc: false
-weight: 203
+weight: 400
 height: 500
 cover:
   image: "/projects/options/options.png"
@@ -24,3 +24,4 @@ cover:
 ## Description
 
 Using Charles Schwab API to automate 0 Days-to-expiration iron condor and iron butterfly strategy based on max loss, premium-credit ratio, implied volatility, delta, gamma, vega, theta, news articles (using my News App), and historical candlestick patterns (using deep learning).
+!["image"]("/projects/options/options.png")
