@@ -8,3 +8,4 @@ weight: 107
 cover:
   image: "/blog/options_automation/cover.jpg"
 ---
+
