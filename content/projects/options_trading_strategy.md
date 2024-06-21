@@ -24,3 +24,7 @@ cover:
 ## Description
 
 Using Charles Schwab API to automate 0 Days-to-expiration iron condor and iron butterfly strategy based on max loss, premium-credit ratio, implied volatility, delta, gamma, vega, theta, news articles (using my News App), and historical candlestick patterns (using deep learning).
+
+## Learning OAuth
+
+For this project, I had to learn bearer token and OAuth 2 framework to connect to my account. Bearer token is used as OAuth authorization code.
