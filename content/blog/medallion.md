@@ -3,7 +3,15 @@ title: "Medallion Architecture"
 description:
 dateString: July 1 2024
 draft: false
-tags: ["Medallion Architecture", "Data Engineering"]
+tags:
+  [
+    "Medallion Architecture",
+    "Data Engineering",
+    "Python",
+    "SQL",
+    "Spark",
+    "Airflow",
+  ]
 weight: 107
 cover:
   image: "/blog/medallion/medallion.png"
