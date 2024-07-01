@@ -31,4 +31,4 @@ We can also use Airflow with this. We can put all those steps in functions and d
 
 Then, we can use the gold layer data to analyze and visualize our data, and use those visualization and analysis for insights.
 
-![a](../../static/blog/medallion/medallion2.png)
+![](../../static/blog/medallion/medallion2.png)
