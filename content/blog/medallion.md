@@ -27,7 +27,7 @@ When I am doing the Medallion Architecture or any data pipeline architecture, I 
 
 <!-- ![](/blog/medallion/directed_graphs.png) -->
 <div style="text-align: center;">
-  <img src="/blog/medallion/directed_graphs.png" alt="Medallion Architecture">
+  <img src="/blog/medallion/directed_graphs.png" alt="Directed Graphs" style="display: block; margin-left: auto; margin-right: auto;">
 </div>
 
 None of the graphs point back to the other node. Node 2 doesn't point back to node 1, it's only one direction.
