@@ -1,5 +1,17 @@
 {{- define "main" }}
 
+<div class="content">
+  {{ range (sort .Pages "Date" "desc") }}
+    <article>
+      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+      <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <div>
+        {{ .Summary }}
+      </div>
+    </article>
+  {{ end }}
+</div>
+
 {{- if (and site.Params.profileMode.enabled .IsHome) }}
 {{- partial "index_profile.html" . }}
 {{- else }} {{/* if not profileMode */}}
