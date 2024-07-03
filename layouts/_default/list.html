@@ -38,7 +38,7 @@
     </div>
   {{ end }}
 
-  {{ $pages := sort (union .RegularPages .Sections) "Date" "desc" }}
+  {{ $pages := sort .Pages.ByDate.Reverse }}
 
   {{ if .IsHome }}
     {{ $pages = where $pages "Type" "in" site.Params.mainSections }}
@@ -52,6 +52,7 @@
 
   {{ $term := .Data.Term }}
   {{ range $index, $page := $paginator.Pages }}
+
     {{ $class := "post-entry" }}
     {{ $user_preferred := or site.Params.disableSpecial1stPost site.Params.homeInfoParams }}
     {{ if and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred) }}
