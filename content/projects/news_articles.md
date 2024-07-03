@@ -1,7 +1,7 @@
 ---
 title: "Sentiment Analysis on News Articles"
 description: "Using Streamlit, NewsAPI, and NLTK"
-dateString: April 2024
+dateString: April 1 2024
 draft: false
 tags: ["Python", "AI", "NLTK", "Streamlit", "NewsAPI", "Sentiment Analysis"]
 showToc: false
