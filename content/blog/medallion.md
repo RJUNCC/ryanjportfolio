@@ -61,3 +61,5 @@ We can use Debezium for CDC and Delta Lake for handling the data in the data lak
 The first thing we have to do is actually set up Debezium. We can set up Debezium using Docker Compose, configure Debezium connector, and post configuration to their REST API. Now, we can start the process of the Medallion Architecture using PySpark, Debezium, Apache Kafka, AWS S3 (Data Lake), Amazon Redshift (Data Warehouse), Prefect, and Delta tables.
 
 First, we can define the schema of the data. Then, we can use Apache Kafka for reading changes. After that, since we are in the bronze layer, we can parse the JSON data and apply the schema from the loaded data we got from Kafka. Then, we write that to the Delta Lake. And then we clean the data in the silver layer, then write it back to the Delta Lake, and in the gold layer we aggregate the data, and then write it to Amazon Redshift. Finally, we read in the data from Redshift for analysis and visualizations.
+
+[Implementing code Later]
