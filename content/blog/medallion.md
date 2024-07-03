@@ -2,7 +2,7 @@
 title: "Medallion Architecture"
 description:
 dateString: 2024-07-01
-draft: false
+draft: True
 tags:
   [
     "Medallion Architecture",
