@@ -83,25 +83,4 @@ tag-entry" }} {{- end }}
     {{- end }}
   </nav>
 </footer>
-{{- end }} {{- end }}{{/* end profileMode */}}
-
-<ul>
-  {{ range (sort .Pages "Date" "desc") }}
-  <li>
-    <a href="{{ .Permalink }}">{{ .Title }}</a>
-    <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
-  </li>
-  {{ end }}
-</ul>
-
-<div class="content">
-  {{ range (sort .Pages "Date" "desc") }}
-  <article>
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
-    <div>{{ .Summary }}</div>
-  </article>
-  {{ end }}
-</div>
-
-{{- end }}{{- /* end main */ -}}
+{{- end }} {{- end }}{{/* end profileMode */}} {{- end }}{{- /* end main */ -}}
