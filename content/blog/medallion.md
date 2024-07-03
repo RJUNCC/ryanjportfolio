@@ -25,6 +25,10 @@ The Medallion Architecture is something that I have learned from a Data Engineer
 
 When I am doing the Medallion Architecture or any data pipeline architecture, I see it as a directed acyclic graph (DAG). If we view this in nodes and edges, a "directed" graph means that each edge points in one direction between each node. For example, let's say we have four nodes. Node 1 is directed to node 2 which is directed to node 3 which is directed to node 4.
 
+<div style="text-align: center;">
+  <img src="/blog/medallion/directed_graphs.png" alt="Directed Graphs" style="display: block; margin-left: auto; margin-right: auto;">
+</div>
+
 None of the graphs point back to the other node. Node 2 doesn't point back to node 1, it's only one direction. This is called downstreaming. Downstreaming is the processes of consuming data from a different process. Upstreaming is the sources or processes of providing data to a different process.
 
 The source data can come from an API, raw local data files, data lake, warehouse, or a lakehouse. It all depends on the needs of the project.
