@@ -1,16 +1,16 @@
 {{ define "main" }}
 <div class="content">
-  {{ range (sort .Pages "Date" "desc") }}
+  {{ range (sort .Pages.ByDate.Reverse) }}
     <article class="post-entry">
       {{ with .Params.cover.image }}
         <div class="entry-cover">
-          <a href="{{ .Page.Permalink }}">
-            <img src="{{ . | relURL }}" alt="{{ .Page.Title }}">
+          <a href="{{ $.Permalink }}">
+            <img src="{{ . | relURL }}" alt="{{ $.Title }}">
           </a>
         </div>
       {{ end }}
       <header class="entry-header">
-        <h2><a href="{{ .Page.Permalink }}">{{ .Title }}</a></h2>
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       </header>
       <div class="entry-content">
         <p>{{ .Summary }}</p>
@@ -18,7 +18,7 @@
       <footer class="entry-footer">
         <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
       </footer>
-      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Page.Permalink }}"></a>
+      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
     </article>
   {{ end }}
 </div>
