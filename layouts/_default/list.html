@@ -1,9 +1,5 @@
 {{ define "main" }}
 
-{{- if (and site.Params.profileMode.enabled .IsHome) }}
-{{- partial "index_profile.html" . }}
-{{- else }} {{/* if not profileMode */}}
-
 <div class="content">
   {{ range (sort .Pages "Date" "desc") }}
     <article class="post-entry">
