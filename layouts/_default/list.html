@@ -4,8 +4,8 @@
     <article class="post-entry">
       {{ with .Params.cover.image }}
         <div class="entry-cover">
-          <a href="{{ $.Permalink }}">
-            <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+          <a href="{{ .Permalink }}">
+            <img src="{{ . | relURL }}" alt="{{ .Title }}">
           </a>
         </div>
       {{ end }}
@@ -17,6 +17,8 @@
       </div>
       <footer class="entry-footer">
         <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
+        <!-- Debug output for date -->
+        <pre>{{ .Date }}</pre>
       </footer>
       <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
     </article>
