@@ -4,7 +4,7 @@
   {{ range (sort .Pages "Date" "desc") }}
     <article>
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-      <time datetime="{{ .Date }}">{{ .Date.Format "2006-12-30" }}</time>
+      <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
       <div>
         {{ .Summary }}
       </div>
@@ -77,7 +77,7 @@
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
   <header class="entry-header">
     <h2>
-      {{- .Title }}
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
       {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
     </h2>
   </header>
