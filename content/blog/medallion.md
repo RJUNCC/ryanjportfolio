@@ -11,6 +11,7 @@ tags:
     "SQL",
     "Spark",
     "Airflow",
+    "Prefect",
   ]
 weight: 107
 cover:
@@ -41,7 +42,7 @@ Next, the silver layer. We read in the bronze layer and transform that bronze la
 
 Next, the gold layer. Let's say we use Amazon Redshift as a data warehouse. We load the silver layer data from AWS S3 and we aggregate the data. Then, we write it to Redshift as a gold layer.
 
-We can also use Airflow with this. We can put all those steps in functions and define a DAG. Then, we can use Airflow's python operators and set task dependencies.
+We can also use Airflow or Prefect with this. We can put all those steps in functions and define a DAG. Then, we can use Airflow's python operators and set task dependencies.
 
 Then, we can use the gold layer data to analyze and visualize our data, and use those visualization and analysis for insights.
 
@@ -51,6 +52,10 @@ Then, we can use the gold layer data to analyze and visualize our data, and use 
 
 # Change Data Capture (CDC)
 
+CDC tracks changes in source databases and transfers only changed data instead of batch loading an entire database. For real time data analytics, CDC ensures data is current.
+
 If we wanted to add CDC to the Medallion Architecture, then we need to capture and apply changes from source data to the bronze, silver, and gold layers, which can be achieved using Delta Lake format as it supports ACID (atomicity, consistency, isolation, and durability) compliance.
+
+We can use Debezium for CDC and Delta Lake for handling the data in the data lake. First, we can define the schema of the data. Then, we can use Apache Kafka for reading changes. After that, since we are in the bronze layer, we can parse the JSON data and apply the schema from the loaded data we got from Kafka. Then, we write that to the Delta Lake. And then we clean the data in the silver layer, then write it back to the Delta Lake, and in the gold layer we aggregate the data, and then write it to Amazon Redshift. Finally, we read in the data from Redshift for analysis and visualizations.
 
 [To be continued]
