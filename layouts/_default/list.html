@@ -1,15 +1,15 @@
-{{ define "main" }}
+{{- define "main" }}
 
-{{ if (and site.Params.profileMode.enabled .IsHome) }}
-{{ partial "index_profile.html" . }}
-{{ else }} {{/* if not profileMode */}}
+{{- if (and site.Params.profileMode.enabled .IsHome) }}
+{{- partial "index_profile.html" . }}
+{{- else }} {{/* if not profileMode */}}
 
-{{ if not .IsHome | and .Title }}
+{{- if not .IsHome | and .Title }}
 <header class="page-header">
-  {{ partial "breadcrumbs.html" . }}
+  {{- partial "breadcrumbs.html" . }}
   <h1>
     {{ .Title }}
-    {{ if and (or (eq .Kind `term`) (eq .Kind `section`)) (.Param "ShowRssButtonInSectionTermList") }}
+    {{- if and (or (eq .Kind `term`) (eq .Kind `section`)) (.Param "ShowRssButtonInSectionTermList") }}
     <a href="index.xml" title="RSS" aria-label="RSS">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round" height="23">
@@ -18,86 +18,85 @@
         <circle cx="5" cy="19" r="1" />
       </svg>
     </a>
-    {{ end }}
+    {{- end }}
   </h1>
-  {{ if .Description }}
+  {{- if .Description }}
   <div class="post-description">
     {{ .Description | markdownify }}
   </div>
-  {{ end }}
+  {{- end }}
 </header>
-{{ end }}
+{{- end }}
 
-{{ if .Content }}
+{{- if .Content }}
 <div class="post-content">
-  {{ if not (.Param "disableAnchoredHeadings") }}
-  {{ partial "anchored_headings.html" .Content -}}
-  {{ else }}{{ .Content }}{{ end }}
+  {{- if not (.Param "disableAnchoredHeadings") }}
+  {{- partial "anchored_headings.html" .Content -}}
+  {{- else }}{{ .Content }}{{ end }}
 </div>
-{{ end }}
+{{- end }}
 
-{{ $pages := where .Pages "Type" "in" site.Params.mainSections }}
+{{- $pages := union .RegularPages .Sections }}
 
-{{ if .IsHome }}
-{{ $pages = where $pages "Type" "in" site.Params.mainSections }}
-{{ end }}
+{{- if .IsHome }}
+{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- end }}
 
-{{ $sortedPages := sort $pages "Date" "desc" }}
-{{ $paginator := .Paginate $sortedPages }}
+{{- $paginator := .Paginate $pages }}
 
-{{ if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
-{{ partial "home_info.html" . }}
-{{ end }}
+{{- if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
+{{- partial "home_info.html" . }}
+{{- end }}
 
-{{ $term := .Data.Term }}
-{{ range $index, $page := $paginator.Pages }}
+{{- $term := .Data.Term }}
+{{- range $index, $page := $paginator.Pages }}
 
-{{ $class := "post-entry" }}
+{{- $class := "post-entry" }}
 
-{{ $user_preferred := or site.Params.disableSpecial1stPost site.Params.homeInfoParams }}
-{{ if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) }}
-{{ $class = "first-entry" }}
-{{ else if $term }}
-{{ $class = "post-entry tag-entry" }}
-{{ end }}
+{{- $user_preferred := or site.Params.disableSpecial1stPost site.Params.homeInfoParams }}
+{{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) }}
+{{- $class = "first-entry" }}
+{{- else if $term }}
+{{- $class = "post-entry tag-entry" }}
+{{- end }}
 
 <article class="{{ $class }}">
-  {{ $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
-  {{ partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
+  {{- $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
+  {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
   <header class="entry-header">
     <h2>
-      {{ .Title }}
-      {{ if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{ end }}
+      {{- .Title }}
+      {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
     </h2>
   </header>
   <!-- Added a custom param hideDescriptionInList  -->
-  {{ if (ne (.Param "hideDescriptionInList") true) }}
+  {{- if (ne (.Param "hideDescriptionInList") true) }}
   <div class="entry-content">
     <p>{{ .Description }}</p>
   </div>
-  {{ end }}
-  {{ if not (.Param "hideMeta") }}
+  {{- end }}
+  {{- if not (.Param "hideMeta") }}
   <footer class="entry-footer">
-    {{ partial "post_meta.html" . }}
+    {{- partial "post_meta.html" . -}}
   </footer>
-  {{ end }}
+  {{- end }}
   <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
 </article>
-{{ end }}
+{{- end }}
 
-{{ if gt $paginator.TotalPages 1 }}
+{{- if gt $paginator.TotalPages 1 }}
 <footer class="page-footer">
   <nav class="pagination">
-    {{ if $paginator.HasPrev }}
+    {{- if $paginator.HasPrev }}
     <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">« {{ i18n "prev_page" }}</a>
-    {{ end }}
-    {{ if $paginator.HasNext }}
+    {{- end }}
+    {{- if $paginator.HasNext }}
     <a class="next" href="{{ $paginator.Next.URL | absURL }}">{{ i18n "next_page" }} »</a>
-    {{ end }}
+    {{- end }}
   </nav>
 </footer>
-{{ end }}
+{{- end }}
 
-{{ end }}{{/* end profileMode */}}
+{{- end }}{{/* end profileMode */}}
 
-{{ end }}{{/* end main */}}
+{{- end }}{{- /* end main */ -}}
