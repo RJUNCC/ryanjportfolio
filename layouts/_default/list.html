@@ -1,17 +1,5 @@
 {{- define "main" }}
 
-<div class="content">
-  {{ range (sort .Pages "Date" "desc") }}
-    <article>
-      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-      <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
-      <div>
-        {{ .Summary }}
-      </div>
-    </article>
-  {{ end }}
-</div>
-
 {{- if (and site.Params.profileMode.enabled .IsHome) }}
 {{- partial "index_profile.html" . }}
 {{- else }} {{/* if not profileMode */}}
@@ -77,7 +65,7 @@
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
   <header class="entry-header">
     <h2>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{- .Title }}
       {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
     </h2>
   </header>
