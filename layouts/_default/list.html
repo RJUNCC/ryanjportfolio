@@ -17,6 +17,8 @@
       </div>
       <footer class="entry-footer">
         <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
+        <!-- Debug output for date -->
+        <pre>{{ .Date }}</pre>
       </footer>
       <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ $.Permalink }}"></a>
     </article>
