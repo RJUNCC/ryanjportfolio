@@ -1,7 +1,7 @@
 ---
 title: "Amazon Recommendation System with Rank Based and Collaborative Filtering"
 description: ""
-dateString: 2024-06-01
+dateString: 2024-06-01T00:00:00Z
 draft: false
 tags:
   [
