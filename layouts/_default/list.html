@@ -36,13 +36,14 @@
 </div>
 {{ end }}
 
-{{ $pages := sort (union .RegularPages .Sections) "Date" "desc" }}
+{{ $pages := where .Pages "Type" "in" site.Params.mainSections }}
 
 {{ if .IsHome }}
 {{ $pages = where $pages "Type" "in" site.Params.mainSections }}
 {{ end }}
 
-{{ $paginator := .Paginate $pages }}
+{{ $sortedPages := sort $pages "Date" "desc" }}
+{{ $paginator := .Paginate $sortedPages }}
 
 {{ if and .IsHome site.Params.homeInfoParams (eq $paginator.PageNumber 1) }}
 {{ partial "home_info.html" . }}
