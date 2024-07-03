@@ -7,25 +7,17 @@
 <div class="content">
   {{ range (sort .Pages "Date" "desc") }}
     <article class="post-entry">
-      {{ $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
-      {{ partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
+      {{ partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" (site.Params.cover.hidden | default site.Params.cover.hiddenInList)) }}
       <header class="entry-header">
-        <h2>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-          {{ if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{ end }}
-        </h2>
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
       </header>
-      {{ if (ne (.Param "hideDescriptionInList") true) }}
       <div class="entry-content">
-        <p>{{ .Description }}</p>
+        <p>{{ .Summary }}</p>
       </div>
-      {{ end }}
-      {{ if not (.Param "hideMeta") }}
       <footer class="entry-footer">
-        {{ partial "post_meta.html" . }}
+        <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
       </footer>
-      {{ end }}
-      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+      <a class="entry-link" href="{{ .Permalink }}"></a>
     </article>
   {{ end }}
 </div>
