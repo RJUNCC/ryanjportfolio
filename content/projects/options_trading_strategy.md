@@ -1,7 +1,7 @@
 ---
 title: "Options Trading Strategy"
 description: "0DTE Iron Condor/Butterfly strategy using Schwab API and Python"
-dateString: June 19 2024
+dateString: 2024-06-19
 draft: false
 tags:
   [

@@ -41,6 +41,8 @@ params:
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   hideMeta: false
+  contentOrder: "date"
+  contentOrderDirection: "desc"
 
   # for enchanced SEO
   env: production

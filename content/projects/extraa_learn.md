@@ -1,7 +1,7 @@
 ---
 title: "ExtraaLearn Project - Predict Conversion From Free to Paid Customers"
 description: ""
-dateString: June 01 2024
+dateString: 2024-06-01
 draft: false
 tags: ["Python", "AI", "Recommendation Systems", "ExtraaLearn", "Conversion"]
 showToc: false

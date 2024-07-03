@@ -1,7 +1,7 @@
 ---
 title: "Medallion Architecture"
 description:
-dateString: July 1 2024
+dateString: 2024-07-01
 draft: false
 tags:
   [
@@ -25,7 +25,6 @@ The Medallion Architecture is something that I have learned from a Data Engineer
 
 When I am doing the Medallion Architecture or any data pipeline architecture, I see it as a directed acyclic graph. If we view this in nodes and edges, a "directed" graph means that each edge points in one direction between each node. For example, let's say we have four nodes. Node 1 is directed to node 2 which is directed to node 3 which is directed to node 4.
 
-<!-- ![](/blog/medallion/directed_graphs.png) -->
 <div style="text-align: center;">
   <img src="/blog/medallion/directed_graphs.png" alt="Directed Graphs" style="display: block; margin-left: auto; margin-right: auto;">
 </div>

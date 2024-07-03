@@ -1,7 +1,7 @@
 ---
 title: "FoodHub Data Analysis"
 description: "Analyze data to get an idea about demand of different restaurants to optimize customer experience."
-dateString: June 01 2024
+dateString: 2024-06-01
 draft: false
 tags: ["Python", "Foodhub", "Data Analysis"]
 showToc: false
