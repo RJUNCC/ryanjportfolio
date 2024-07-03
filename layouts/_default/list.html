@@ -2,10 +2,27 @@
 
 <div class="content">
   {{ range (sort .Pages "Date" "desc") }}
-    <article>
-      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-      <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
-      <p>{{ .Summary }}</p>
+    <article class="post-entry">
+      {{- $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
+      {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
+      <header class="entry-header">
+        <h2>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
+        </h2>
+      </header>
+      <!-- Added a custom param hideDescriptionInList  -->
+      {{- if (ne (.Param "hideDescriptionInList") true) }}
+      <div class="entry-content">
+        <p>{{ .Description }}</p>
+      </div>
+      {{- end }}
+      {{- if not (.Param "hideMeta") }}
+      <footer class="entry-footer">
+        {{- partial "post_meta.html" . -}}
+      </footer>
+      {{- end }}
+      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
     </article>
   {{ end }}
 </div>
@@ -75,7 +92,7 @@
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
   <header class="entry-header">
     <h2>
-      {{- .Title }}
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
       {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
     </h2>
   </header>
